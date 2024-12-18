@@ -11,35 +11,92 @@ let availableQuesions = [];
 
 let questions = [
   {
-    question: "Inside which HTML element do we put the JavaScript??",
-    choice1: "<script>",
-    choice2: "<javascript>",
-    choice3: "<js>",
-    choice4: "<scripting>",
-    answer: 1
+    question: "What is my Nickname??",
+    choice1: "Hinata Boke",
+    choice2: "Guddi ",
+    choice3: "jamuni",
+    choice4: "seraphin",
+    answer: 2
   },
   {
     question:
-      "What is the correct syntax for referring to an external script called 'xxx.js'?",
-    choice1: "<script href='xxx.js'>",
-    choice2: "<script name='xxx.js'>",
-    choice3: "<script src='xxx.js'>",
-    choice4: "<script file='xxx.js'>",
+      "what kind of person am i ?",
+    choice1: "letter/email",
+    choice2: "phone-call",
+    choice3: "video-call",
+    choice4: "text",
+    answer: 4
+  },
+  {
+    question: " whats my desired style ? ",
+    choice1: "Maximalism",
+    choice2: "justin bieber",
+    choice3: " Shabby Chic",
+    choice4: " Minimalism",
+    answer: 4
+  },
+  {
+    question: " whats my fav genre in movies ? ",
+    choice1: "Fantasy",
+    choice2: "horror/thriller",
+    choice3: " SCI-FI",
+    choice4: " Romance",
+    answer: 2
+  },
+  {
+    question: " what do i prefer most ? ",
+    choice1: " anime-series",
+    choice2: " anime-movie ",
+    choice3: " k-dramas ",
+    choice4: " indian serials ",
     answer: 3
   },
   {
-    question: " How do you write 'Hello World' in an alert box?",
-    choice1: "msgBox('Hello World');",
-    choice2: "alertBox('Hello World');",
-    choice3: "msg('Hello World');",
-    choice4: "alert('Hello World');",
-    answer: 4
+    question: " Fav color palette in general  ",
+    choice1: "pastel",
+    choice2: "neon",
+    choice3: " monochromatic",
+    choice4: " retro/80s",
+    answer: 1
+  },
+  {
+    question: " whats my biggest ick  ",
+    choice1: "wrong pronunciation ",
+    choice2: "wrong spelling",
+    choice3: "wrong grammar overall",
+    choice4: " continuous yapping ",
+    answer: 2
+  },
+  {
+    question: " whats my fav TV show or movie  ",
+    choice1: "Evil Dead rise 2 ",
+    choice2: "Hum Saath Saath h / RAAZ REBOOT ",
+    choice3: " Haikyuu / attack on titan ",
+    choice4: " yeh rishta kya kehlata h / iss pyaar ko kya naam du :)   ",
+    answer: 3
+  },
+  {
+    question: " what am i not a big of ? ",
+    choice1: " webtoon",
+    choice2: " Manga ",
+    choice3: " Books",
+    choice4: " Menu card",
+    answer: 3
+  },
+  {
+    question: "Who is my favorite musician or band?",
+    choice1: " Billie Eilish",
+    choice2: " Taylor Swift  ",
+    choice3: " Rosie ",
+    choice4: " BEYONCE",
+    answer: 3
   }
+
 ];
 
 //CONSTANTS
 const CORRECT_BONUS = 10;
-const MAX_QUESTIONS = 3;
+const MAX_QUESTIONS = 10;
 
 startGame = () => {
   questionCounter = 0;
@@ -50,6 +107,7 @@ startGame = () => {
 
 getNewQuestion = () => {
   if (availableQuesions.length === 0 || questionCounter >= MAX_QUESTIONS) {
+    localStorage.setItem("mostRecentScore", score);
     //go to the end page
     return window.location.assign("/end.html");
   }
